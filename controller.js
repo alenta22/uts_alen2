@@ -54,3 +54,21 @@ exports.tampildataidsparepart = function(req,res){
         }
     });
 };
+
+//post data di tabel montir
+exports.tambahmontir = function(req , res){
+    var id_montir = req.body.id_montir;
+    var Nama_montir = req.body.Nama_montir;
+    var harga_perjam = req.body.harga_perjam;
+
+    connection.query('INSERT INTO t_montir (id_montir,Nama_montir,harga_perjam) VALUES(?,?,?)',
+    [id_montir,Nama_montir,harga_perjam],
+    function (error, rows, fields)
+    {
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Berhasil menambah data montir",res)
+        }
+    });
+};

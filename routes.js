@@ -18,4 +18,7 @@ module.exports = function(app){
 
     app.route('/tampilsparepartid/:id_sparepart')
     .get(jsonku.tampildataidsparepart)
+
+    app.route('/tambahdatamontir')
+    .post(jsonku.tambahmontir)
 }
