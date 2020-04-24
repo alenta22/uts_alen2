@@ -4,6 +4,7 @@
 module.exports = function(app){
     var jsonku = require('./controller');
 
+
     app.route('/')
     .get(jsonku.index);
 
@@ -30,4 +31,9 @@ module.exports = function(app){
 
     app.route('/tambahdatalevel')
     .post(jsonku.tambahlevel)
+
+    app.route('/tambahdataservis')
+    .post(jsonku.tambahservis)
+
+
 }
