@@ -1,0 +1,18 @@
+{
+  "name": "uts_alen",
+  "version": "1.0.0",
+  "description": "uts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016\u0016https://github.com/alenta22/uts_alen2.git"
+  },
+  "keywords": [
+    "restapi"
+  ],
+  "author": "alen",
+  "license": "ISC"
+}
