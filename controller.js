@@ -31,7 +31,8 @@ exports.tampildatamontir = function(req,res){
 
 //menampilkan data berdasarkan id
 exports.tampildataidmontir = function(req,res){
-    connection.query('SELECT * FROM t_montir WHERE id_montir', [id],
+    let id_montir = req.params.id_montir;
+    connection.query('SELECT * FROM t_montir WHERE id_montir = ?', [id_montir],
     function(error, rows, fields){
         if(error){
             console.log(error);

@@ -13,6 +13,6 @@ module.exports = function(app){
     app.route('/tampilmontir')
     .get(jsonku.tampildatamontir)
 
-    app.route('/tampil/idm')
+    app.route('/tampil/:id_montir')
     .get(jsonku.tampildataidmontir)
 }
