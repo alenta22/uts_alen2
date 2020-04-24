@@ -24,4 +24,7 @@ module.exports = function(app){
 
     app.route('/tambahdatasparepart')
     .post(jsonku.tambahsparepart)
+
+    app.route('/tambahdatauser')
+    .post(jsonku.tambahuser)
 }
