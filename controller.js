@@ -16,4 +16,15 @@ exports.tampildatasparepart = function(req,res){
             response.ok(rows, res)
         }
     })
-}
+};
+
+//menampilkan data montir
+exports.tampildatamontir = function(req,res){
+    connection.query('SELECT * FROM t_montir', function(error, rows, fileds){
+        if(error){
+            connection.log(error);
+        }else{
+            response.ok(rows, res)
+        }
+    })
+};
