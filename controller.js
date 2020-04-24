@@ -72,3 +72,22 @@ exports.tambahmontir = function(req , res){
         }
     });
 };
+
+//post data di tabel sparepart
+exports.tambahsparepart = function(req , res){
+    var id_sparepart = req.body.id_sparepart;
+    var nama_sparepart = req.body.nama_sparepart;
+    var harga_sparepart = req.body.harga_sparepart;
+    var satuan = req.body.satuan;
+
+    connection.query('INSERT INTO t_sparepart (id_sparepart,nama_sparepart,harga_sparepart,satuan) VALUES(?,?,?,?)',
+    [id_sparepart,nama_sparepart,harga_sparepart,satuan],
+    function (error, rows, fields)
+    {
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Berhasil menambah data sparepart",res)
+        }
+    });
+};
