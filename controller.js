@@ -28,3 +28,15 @@ exports.tampildatamontir = function(req,res){
         }
     })
 };
+
+//menampilkan data berdasarkan id
+exports.tampildataidmontir = function(req,res){
+    connection.query('SELECT * FROM t_montir WHERE id_montir', [id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok(rows, res);
+        }
+    });
+};
