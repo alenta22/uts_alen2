@@ -41,3 +41,16 @@ exports.tampildataidmontir = function(req,res){
         }
     });
 };
+
+//menampilkan data berdasarkan id
+exports.tampildataidsparepart = function(req,res){
+    let id_sparepart = req.params.id_sparepart;
+    connection.query('SELECT * FROM t_sparepart WHERE id_sparepart = ?', [id_sparepart],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok(rows, res);
+        }
+    });
+};
