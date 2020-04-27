@@ -149,3 +149,20 @@ exports.tambahservis = function (req, res) {
         }
         });
 };
+
+//mengubah data di tabel montir
+exports.editmontir = function (req, res) {
+    var id_montir = req.body.id_montir;
+    var Nama_montir = req.body.Nama_montir;
+    var harga_perjam = req.body.harga_perjam;
+
+    connection.query('UPDATE t_montir SET nama_montir=?, harga_perjam=? WHERE id_montir=?', 
+    [id_montir, Nama_montir, harga_perjam,],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Ubah Data Montir", res)
+            }
+        });
+};
