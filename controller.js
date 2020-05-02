@@ -308,3 +308,14 @@ exports.hapusservis = function(req, res){
         }
     });
 };
+
+//menampilkan data servis
+exports.tampildataservis = function(req,res){
+    connection.query('SELECT * FROM t_servis', function(error, rows, fileds){
+        if(error){
+            connection.log(error);
+        }else{
+            response.ok(rows, res)
+        }
+    })
+};
