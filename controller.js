@@ -197,7 +197,7 @@ exports.edituser = function (req, res) {
     
 
     connection.query('UPDATE t_user SET username=?, email=?, password=?, role=?, tanggal_daftar=? WHERE id_user=?',
-        [username, email, password, role, tanggal_daftar, id_user], 
+        [id_user, username, email, password, role, tanggal_daftar], 
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
