@@ -43,4 +43,8 @@ module.exports = function(app){
 
     app.route('/editdatauser')
     .put(jsonku.edituser);
+
+    app.route('/editdatalevel')
+    .put(jsonku.editlevel);
+
 }

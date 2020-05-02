@@ -206,3 +206,23 @@ exports.edituser = function (req, res) {
             }
         });
 };
+
+//menambahkan data level
+exports.editlevel = function (req, res) {
+    var id_level = req.body.id_level;
+    var id_user = req.body.nama_level;
+    var access_token = req.body.role;
+    var ip_address = req.body.access_token;
+    
+    
+
+    connection.query('UPDATE t_level SET id_user=?, access_token=?, ip_address=? WHERE id_level=?',
+        [id_level,id_user,access_token,ip_address], 
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Mengubah Data", res)
+            }
+        });
+};
