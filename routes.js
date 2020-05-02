@@ -50,4 +50,7 @@ module.exports = function(app){
     app.route('/editdataservis')
     .put(jsonku.editservis);
 
+    app.route('/hapusmontir')
+    .delete(jsonku.hapusMontir);
+
 }
