@@ -166,3 +166,43 @@ exports.editmontir = function (req, res) {
             }
         });
 };
+
+//mengubah data Sparepart
+exports.editsparepart = function (req, res) {
+    var id_sparepart = req.body.id_sparepart;
+    var nama_sparepart = req.body.nama_sparepart;
+    var harga_sparepart = req.body.harga_sparepart;
+    var satuan = req.body.satuan;
+    
+
+    connection.query('UPDATE t_sparepart SET nama_sparepart=?, harga_sparepart=?, satuan=? WHERE id_sparepart=?',
+     [nama_sparepart, harga_sparepart, satuan, id_sparepart],
+    function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Mengubah Data", res)
+            }
+        });
+};
+
+//Mengubah data User
+exports.edituser = function (req, res) {
+    var id_user = req.body.id_user;
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var role = req.body.role;
+    var tanggal_daftar = new Date();
+    
+
+    connection.query('UPDATE t_user SET username=?, email=?, password=?, role=?, tanggal_daftar=? WHERE id_user=?',
+        [username, email, password, role, tanggal_daftar, id_user], 
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Mengubah Data", res)
+            }
+        });
+};

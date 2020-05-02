@@ -38,5 +38,9 @@ module.exports = function(app){
     app.route('/editdatamontir')
     .put(jsonku.editmontir)
 
+    app.route('/editdatasparepart')
+    .put(jsonku.editsparepart);
 
+    app.route('/editdatauser')
+    .put(jsonku.edituser);
 }
