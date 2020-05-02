@@ -25,6 +25,7 @@ function verifikasi(){
             return rest.status(401).send({auth:false, mesaage:'Token tidak tersedia!'});
         }
     }
-}
+};
+
 
 module.exports = verifikasi;
